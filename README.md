@@ -8,7 +8,7 @@ EXP. No| Experiment
 1| Basic linux commands
 2|Shell programming
 3|System calls of linux operating system
-4|Scheduling algorithms\nFCFS
+4|Scheduling algorithms- FCFS
 
 
 
