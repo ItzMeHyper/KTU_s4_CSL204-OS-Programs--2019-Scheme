@@ -9,7 +9,7 @@ EXP. No| Experiment
 2|Shell programming
 3|System calls of linux operating system
 4|Scheduling algorithms- FCFS, SJFS, Priority, RR.
-5|
+5|Memory allocation methods- First Fit, Best Fit, Worst Fit
 
 
 
