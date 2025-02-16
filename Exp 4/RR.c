@@ -49,8 +49,8 @@ int main() {
         printf("\n P[%d]\t\t %d\t\t %d\t\t %d", i + 1, bTime[i], wTime[i], tTime[i]);
     }
 
-    printf("\n\nAverage Waiting Time = %.2f", wAvg / (float)n);
-    printf("\nAverage Turnaround Time = %.2f\n", tAvg / (float)n);
+    printf("\n\nAverage Waiting Time = %.2f ms", wAvg / (float)n);
+    printf("\nAverage Turnaround Time = %.2f ms\n", tAvg / (float)n);
 
     printf("\nGANTT CHART: \n");
     printf("\t ");
