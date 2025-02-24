@@ -12,26 +12,29 @@ int main() {
     for (int i = 0; i < n; i++) {
         printf("Enter the burst time of process %d: ", i + 1);
         scanf("%d", &bTime[i]);
-        remainingTime[i] = bTime[i]; 
+        remainingTime[i] = bTime[i];
+        wTime[i] = 0; 
     }
 
     printf("Enter the time quantum: ");
     scanf("%d", &quantum);
 
-    int time = 0, done;
+    int time = 0, done, gantt[100], ganttTime[100], ganttIndex = 0;
 
     do {
         done = 1;
         for (int i = 0; i < n; i++) {
             if (remainingTime[i] > 0) {
-                done = 0; 
+                done = 0;
+                gantt[ganttIndex] = i;         
+                ganttTime[ganttIndex++] = time; 
+
                 if (remainingTime[i] > quantum) {
                     time += quantum;
                     remainingTime[i] -= quantum;
-                }
-                else {
+                } else {
                     time += remainingTime[i];
-                    wTime[i] = time - bTime[i]; 
+                    wTime[i] = time - bTime[i];
                     remainingTime[i] = 0;
                 }
             }
@@ -52,25 +55,24 @@ int main() {
     printf("\n\nAverage Waiting Time = %.2f ms", wAvg / (float)n);
     printf("\nAverage Turnaround Time = %.2f ms\n", tAvg / (float)n);
 
-    printf("\nGANTT CHART: \n");
-    printf("\t ");
-    for (int i = 0; i < n; i++) {
-        printf("-------- ");
-    }
-    printf("\n\t|");
-    for (int i = 0; i < n; i++) {
-        printf("  P[%d]  |", i + 1);
-    }
-    printf("\n\t ");
-    for (int i = 0; i < n; i++) {
-        printf("-------- ");
-    }
-
-    printf("\n\t0");
-    int temp = 0;
-    for (int i = 0; i < n; i++) {
-        temp += bTime[i];
-        printf("\t%d", temp);
+    printf("\nGANTT CHART:\n");
+    for (int i = 0; i < ganttIndex; i++) {
+        printf(" -------");
     }
     printf("\n");
+    for (int i = 0; i < ganttIndex; i++) {
+        printf("|  P[%d]\t", gantt[i] + 1);
+    }
+    printf("|");
+    printf("\n");
+    for (int i = 0; i < ganttIndex; i++) {
+        printf(" -------");
+    }
+    printf("\n");
+    for (int i = 0; i < ganttIndex; i++) {
+        printf("%d\t", ganttTime[i]);
+    }
+    printf("%d\n", time);
+   
+    return 0;
 }
