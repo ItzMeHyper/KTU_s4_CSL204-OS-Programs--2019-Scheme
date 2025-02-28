@@ -19,7 +19,7 @@ int main() {
     for (i = 0; i < r; i++) {
         scanf("%d", &avail[i]);
     }
-    
+
     printf("\nEnter the allocation of processess: \n");
     for (i = 0; i < n; i++) {
         for (j = 0; j < r; j++) {
@@ -41,22 +41,14 @@ int main() {
         }
     }
 
-
-    printf("\nAllocation\tMax\t\tNeed\n");
+    printf("\nProcess\tAllocation\tMax\t\tNeed\n");
     for (i = 0; i < n; i++) {
-        for (j = 0; j < r; j++) {
-            printf("%d ", alloc[i][j]);
-        }
+        printf("P%d\t", i);
+        for (j = 0; j < r; j++) printf("%d ", alloc[i][j]);
         printf("\t\t");
-
-        for (j = 0; j < r; j++) {
-            printf("%d ", max[i][j]);
-        }
+        for (j = 0; j < r; j++) printf("%d ", max[i][j]);
         printf("\t\t");
-
-        for (j = 0; j < r; j++) {
-            printf("%d ", need[i][j]);
-        }
+        for (j = 0; j < r; j++) printf("%d ", need[i][j]);
         printf("\n");
     }
 
@@ -95,4 +87,3 @@ int main() {
     }
     printf(">\n");
 }
-
