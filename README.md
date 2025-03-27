@@ -14,5 +14,7 @@ KTU S4 CSL 204 - OS [Operating Systems] Lab Programs [2019 Scheme]
 | 6 | Semaphores |
 | 7 | Bankers Alogorithm |
 | 8 | Interprocess Communication |
+| 9 | Page Replacement Schemes: <br> &nbsp;  • FIFO <br> &nbsp; • LRU <br> &nbsp; • LFU |
+| 10 | Simulation Of Disk Scheduling Algorithms: <br> &nbsp; • FCFS <br> &nbsp; • SCAN <br> &nbsp; • C-SCAN |
 
 **Programs or Program name may vary according to colleges**
