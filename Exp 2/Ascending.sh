@@ -13,4 +13,4 @@ for ((i = 0; i < n - 1; i++)); do
     done
 done
 
-echo "Sorted numbers in descending order: ${arr[@]}"
+echo "Sorted numbers in ascending order: ${arr[@]}"
